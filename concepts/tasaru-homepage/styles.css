@@ -3566,7 +3566,7 @@ color:#1c1919;
 overflow:hidden
 }
 .auar-second-copy{
-align-self:start;
+align-self:center;
 display:flex;
 flex-direction:column;
 min-width:0;
@@ -3633,7 +3633,7 @@ text-transform:none;
 white-space:nowrap
 }
 .auar-second-visual{
-align-self:start;
+align-self:center;
 width:100%;
 height:min(560px,70vh);
 min-height:420px;
@@ -6726,6 +6726,31 @@ border-right:0!important
 .joby-up-rail,
 .joby-up-finale>span{
 display:none!important
+}
+
+/* Final supplier capability card height. */
+.vast-progress-card{
+height:clamp(430px,58svh,600px)!important;
+min-height:clamp(430px,58svh,600px)!important
+}
+.vast-progress-caption{
+min-height:clamp(176px,20svh,232px)!important
+}
+@media(max-width:1000px){
+.vast-progress-card{
+height:460px!important;
+min-height:460px!important
+}
+}
+@media(max-width:640px){
+.vast-progress-card{
+height:420px!important;
+min-height:420px!important
+}
+.vast-progress-caption,
+.vast-progress-card--side .vast-progress-caption{
+gap:22px!important
+}
 }
 
 /* Final body paragraph typography. */
