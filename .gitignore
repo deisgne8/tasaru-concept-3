@@ -1,0 +1,5 @@
+.DS_Store
+.playwright-mcp/
+tmp/
+output/
+concepts/tasaru-homepage/*.png

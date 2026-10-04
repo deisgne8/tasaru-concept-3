@@ -1,0 +1,267 @@
+/* One geometry model owns the image sequence; legacy section rules stay isolated. */
+#experience-highlights {
+  height: auto !important;
+  background: #001730 !important;
+  overflow: visible !important;
+}
+#experience-highlights .joby-up-sticky {
+  position: relative !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+#experience-highlights .joby-up-title {
+  position: relative !important;
+  inset: auto !important;
+  min-height: 0 !important;
+  padding: 96px 24px 48px !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+#experience-highlights #joby-up-title {
+  max-width: 1100px !important;
+  font-size: var(--type-display) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0 !important;
+  white-space: normal !important;
+}
+#experience-highlights .joby-up-stage {
+  position: relative !important;
+  inset: auto !important;
+  display: grid !important;
+  gap: 64px !important;
+  padding: 0 24px 64px !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+#experience-highlights .joby-up-card {
+  position: relative !important;
+  inset: auto !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 24px !important;
+  min-height: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto;
+}
+#experience-highlights .joby-up-card figure {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 4 / 3;
+  margin: 0 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+#experience-highlights .joby-up-card figure > img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transform: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+#experience-highlights .joby-up-thumb { display: none !important; }
+#experience-highlights .joby-up-copy {
+  position: relative !important;
+  inset: auto !important;
+  display: grid !important;
+  align-content: center !important;
+  width: auto !important;
+  max-width: none !important;
+  gap: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto;
+}
+#experience-highlights .joby-up-copy p {
+  display: grid !important;
+  gap: 12px !important;
+  font-size: 18px !important;
+  line-height: 1.4 !important;
+}
+#experience-highlights .joby-up-copy p span:first-child {
+  font-size: var(--type-card) !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0 !important;
+}
+#experience-highlights .joby-up-copy p span:not(:first-child) {
+  font-size: 18px !important;
+  max-width: none !important;
+}
+#experience-highlights .joby-up-copy a { justify-self: start; font-size: 16px !important; }
+#experience-highlights .joby-up-copy p span,
+#experience-highlights .joby-up-copy a {
+  opacity: 1 !important;
+  transform: none !important;
+}
+#experience-highlights .joby-up-finale {
+  position: relative !important;
+  inset: auto !important;
+  display: block !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+#experience-highlights .joby-up-finale > div {
+  display: grid !important;
+  max-width: none !important;
+  margin: 0 !important;
+  gap: 28px !important;
+}
+#experience-highlights .joby-up-finale h3 {
+  font-size: var(--type-story) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+}
+#experience-highlights .joby-up-finale em { color: inherit !important; opacity: 1 !important; }
+#experience-highlights .joby-up-finale a { justify-self: start; }
+
+@media (min-width: 901px) and (prefers-reduced-motion: no-preference) {
+  #experience-highlights.motion-ready { height: 650svh !important; }
+  #experience-highlights.motion-ready .joby-up-sticky {
+    position: sticky !important;
+    top: 0 !important;
+    height: 100svh !important;
+    isolation: isolate;
+  }
+  #experience-highlights.motion-ready .joby-up-title {
+    position: absolute !important;
+    top: 104px !important;
+    left: 32px !important;
+    right: 32px !important;
+    padding: 0 !important;
+    opacity: var(--title-alpha, 1) !important;
+    transform: translate3d(0, var(--title-y, 0px), 0) !important;
+  }
+  #experience-highlights.motion-ready .joby-up-stage,
+  #experience-highlights.motion-ready .joby-up-card {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    padding: 0 !important;
+    pointer-events: none;
+  }
+  #experience-highlights.motion-ready .joby-up-card { z-index: 2 !important; }
+  #experience-highlights.motion-ready .joby-up-card figure {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: var(--image-width) !important;
+    height: var(--image-height) !important;
+    aspect-ratio: auto;
+    border-radius: var(--image-radius, 16px) !important;
+    transform-origin: top left !important;
+    transform: translate3d(var(--image-x), var(--image-y), 0) scale(var(--image-scale)) !important;
+    visibility: var(--image-visibility, hidden);
+    will-change: transform;
+  }
+  #experience-highlights.motion-ready .joby-up-copy {
+    position: absolute !important;
+    left: var(--copy-x) !important;
+    top: 50% !important;
+    width: var(--copy-width) !important;
+    transform: translateY(-50%) !important;
+    visibility: var(--copy-visibility, hidden);
+    pointer-events: auto;
+  }
+  #experience-highlights.motion-ready .joby-up-copy p span,
+  #experience-highlights.motion-ready .joby-up-copy a {
+    opacity: var(--line-alpha, 0) !important;
+    transform: translate3d(0, var(--line-y, 18px), 0) !important;
+  }
+  #experience-highlights.motion-ready .joby-up-finale {
+    position: absolute !important;
+    left: var(--finale-x) !important;
+    top: 0 !important;
+    width: var(--finale-width) !important;
+    transform: translate3d(0, var(--finale-y), 0) !important;
+    visibility: var(--finale-visibility, hidden);
+    pointer-events: auto;
+    z-index: 5;
+  }
+  #experience-highlights.motion-ready .highlight-word { opacity: var(--word-alpha, .25); }
+  #experience-highlights.motion-ready .joby-up-finale a { opacity: var(--finale-link-alpha, 0); }
+}
+@media (max-width: 900px) {
+  #experience-highlights .joby-up-copy p,
+  #experience-highlights .joby-up-copy p span:not(:first-child) { font-size: 16px !important; }
+}
+
+#experience-highlights .joby-up-copy a,
+#experience-highlights .joby-up-finale a {
+  position: relative !important;
+  isolation: isolate !important;
+  width: max-content !important;
+  min-width: 0 !important;
+  height: 60px !important;
+  min-height: 60px !important;
+  max-height: 60px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 0 78px 0 25px !important;
+  border: 1px solid #7f00e8 !important;
+  border-radius: 12px !important;
+  background: #7f00e8 !important;
+  color: #fff !important;
+  overflow: hidden !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  transition: background .28s cubic-bezier(.2,.78,.2,1), color .28s cubic-bezier(.2,.78,.2,1), padding .28s cubic-bezier(.2,.78,.2,1) !important;
+}
+
+#experience-highlights .joby-up-copy a::after,
+#experience-highlights .joby-up-finale a::after {
+  content: "➜" !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  width: 60px !important;
+  height: 58px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 11px !important;
+  background: #142027 !important;
+  color: #fff !important;
+  font-size: 23px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  transition: right .28s cubic-bezier(.2,.78,.2,1), left .28s cubic-bezier(.2,.78,.2,1), background .28s cubic-bezier(.2,.78,.2,1), color .28s cubic-bezier(.2,.78,.2,1) !important;
+}
+
+#experience-highlights .joby-up-copy a:hover,
+#experience-highlights .joby-up-copy a:focus-visible,
+#experience-highlights .joby-up-copy a.is-hover,
+#experience-highlights .joby-up-finale a:hover,
+#experience-highlights .joby-up-finale a:focus-visible,
+#experience-highlights .joby-up-finale a.is-hover {
+  padding: 0 25px 0 86px !important;
+  background: #142027 !important;
+  border-color: #7f00e8 !important;
+  color: #fff !important;
+}
+
+#experience-highlights .joby-up-copy a:hover::after,
+#experience-highlights .joby-up-copy a:focus-visible::after,
+#experience-highlights .joby-up-copy a.is-hover::after,
+#experience-highlights .joby-up-finale a:hover::after,
+#experience-highlights .joby-up-finale a:focus-visible::after,
+#experience-highlights .joby-up-finale a.is-hover::after {
+  left: 0 !important;
+  right: auto !important;
+  background: #7f00e8 !important;
+  color: #fff !important;
+}
