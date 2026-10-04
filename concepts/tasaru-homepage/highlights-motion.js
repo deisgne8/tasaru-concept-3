@@ -59,8 +59,10 @@
     if (brandLine) {
       // Bridge the empty space below the settled finale, leaving room for its CTA.
       const section = brandLine.closest('section');
+      const extension = parseFloat(getComputedStyle(brandLine, '::before').height);
+      // Undo the half-height overlap when measuring the original gap.
       const lineOffset = parseFloat(getComputedStyle(section).paddingTop)
-        + parseFloat(getComputedStyle(brandLine).marginTop);
+        + parseFloat(getComputedStyle(brandLine).marginTop) + extension;
       const finaleBottom = height * .15 + 7 + finale.offsetHeight;
       const rise = Math.max(0, height - finaleBottom + lineOffset - 48);
       brandLine.style.setProperty('--brand-line-rise', `${rise}px`);

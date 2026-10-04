@@ -6785,8 +6785,8 @@ overflow:visible;
 position:relative!important;
 z-index:3;
 width:calc(50% + min(18vw,210px))!important;
-height:clamp(210px,28vw,340px)!important;
-margin:calc(clamp(64px,8vw,118px) * -1) 0 clamp(54px,6vw,86px)!important;
+height:clamp(105px,14vw,170px)!important;
+margin:calc(clamp(64px,8vw,118px) * -1 - var(--brand-line-rise,0px) / 2) 0 clamp(27px,3vw,43px)!important;
 border-bottom:4px solid var(--teal)!important;
 border-right:4px solid var(--teal)!important;
 border-bottom-right-radius:13px!important;
@@ -6799,7 +6799,7 @@ position:absolute;
 right:-4px;
 bottom:100%;
 width:4px;
-height:var(--brand-line-rise,0px);
+height:calc(var(--brand-line-rise,0px) / 2);
 background:var(--teal);
 }
 
@@ -6907,9 +6907,9 @@ color:#fff!important
 @media(max-width:700px){
 .supplier-progress-brand-line{
 width:calc(50% + min(27vw,115px))!important;
-height:170px!important;
+height:85px!important;
 margin-top:-58px!important;
-margin-bottom:48px!important;
+margin-bottom:24px!important;
 border-bottom-width:3px!important;
 border-right-width:3px!important;
 border-bottom-right-radius:10px!important
