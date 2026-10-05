@@ -3187,16 +3187,19 @@ padding:64px 24px
 .joby-nav{
 height:96px!important;
 padding:0 38px!important;
-background:rgba(0,23,48,.72)!important;
+background:transparent!important;
 border:0!important;
-border-bottom:1px solid rgba(255,255,255,.12)!important;
--webkit-backdrop-filter:blur(20px) saturate(140%)!important;
-backdrop-filter:blur(20px) saturate(140%)!important;
-box-shadow:0 4px 24px rgba(0,10,24,.12)!important;
+-webkit-backdrop-filter:none!important;
+backdrop-filter:none!important;
+box-shadow:none!important;
 z-index:90!important
 }
 .joby-nav.scrolled{
-background:rgba(0,23,48,.72)!important
+background:rgba(0,23,48,.72)!important;
+border-bottom:1px solid rgba(255,255,255,.12)!important;
+-webkit-backdrop-filter:blur(20px) saturate(140%)!important;
+backdrop-filter:blur(20px) saturate(140%)!important;
+box-shadow:0 4px 24px rgba(0,10,24,.12)!important
 }
 body:not(.menu-open) .joby-nav .brand-mark,
 body:not(.menu-open) .joby-nav .brand-full{
@@ -3209,7 +3212,7 @@ body:not(.menu-open) .joby-nav .joby-utility-link{
 color:#fff!important
 }
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
-.header.joby-nav{
+.header.joby-nav.scrolled{
 background:rgba(0,23,48,.95)!important
 }
 }

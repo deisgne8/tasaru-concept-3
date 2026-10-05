@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#001730">
   <meta name="description" content="TASARU Supplier Hub hero concept.">
   <title>TASARU — Hero</title>
-  <link rel="stylesheet" href="styles.css?v=joby-platform-motion-v75">
+  <link rel="stylesheet" href="styles.css?v=joby-platform-motion-v76">
   <link rel="stylesheet" href="responsive-type.css?v=7">
   <link rel="stylesheet" href="highlights-motion.css?v=3">
 </head>
@@ -358,6 +358,7 @@
   <script>
     const menu = document.querySelector('.joby-menu');
     const menuToggle = document.querySelector('.joby-menu-toggle');
+    const stickyNav = document.querySelector('.joby-nav');
 
     function setMenu(open) {
       menuToggle.setAttribute('aria-expanded', String(open));
@@ -384,6 +385,7 @@
     }
 
     function measureUpScene() {
+      stickyNav.classList.toggle('scrolled', window.scrollY > 50);
       if (!upScene) return;
 
       const navOnLight = lightNavSections.some((section) => {
