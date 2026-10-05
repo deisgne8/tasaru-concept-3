@@ -1,5 +1,6 @@
 /* Loaded after the concept styles to resolve legacy typography overrides. */
 :root {
+  --radius-ui: 8px;
   --type-heading: 64px;
   --type-subhead: 28px;
   --type-body: 17px;
@@ -184,7 +185,7 @@
 .icomat-ecosystem-detail,
 .location-body,
 .location-routes .location-copy .location-body,
-.final-cta-specs li,
+.final-cta-specs,
 .joby-footer-address,
 .joby-footer-columns a,
 .joby-footer-columns p,
@@ -208,4 +209,33 @@
 .vast-progress-kicker,
 .icomat-ecosystem-kicker {
   font-size: 20px !important;
+}
+
+/* Shared corners for framed media, cards and split-button segments. */
+:root :is(
+  .auar-second-visual,
+  .vast-progress-card,
+  .vast-progress-caption,
+  .icomat-ecosystem-card,
+  .joby-utility-link,
+  .joby-hero-actions a,
+  .inline-link,
+  .vast-progress-controls button,
+  .location-routes .location-copy .location-cta,
+  .final-cta-main a
+),
+:root :is(
+  .joby-utility-link,
+  .joby-hero-actions a,
+  .inline-link,
+  .location-routes .location-copy .location-cta,
+  .final-cta-main a
+)::after {
+  border-radius: var(--radius-ui) !important;
+}
+:root .supplier-progress-brand-line {
+  border-bottom-right-radius: var(--radius-ui) !important;
+}
+:root .location-zoom-sticky {
+  border-radius: 0 0 var(--radius-ui) var(--radius-ui) !important;
 }

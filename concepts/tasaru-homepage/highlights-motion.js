@@ -46,6 +46,7 @@
     const gap = width < 1000 ? 20 : 28;
     geometry = {
       height, imageWidth, imageHeight,
+      radius: parseFloat(getComputedStyle(scene).getPropertyValue('--radius-ui')) || 8,
       main: { x, y: 25, scale: 1 },
       previous: { x: x - imageWidth * thumb - gap, y: 25, scale: thumb },
       next: { x: x + imageWidth + gap, y: height - 25 - imageHeight * thumb, scale: thumb }
@@ -59,10 +60,10 @@
     if (brandLine) {
       // Bridge the empty space below the settled finale, leaving room for its CTA.
       const section = brandLine.closest('section');
-      const extension = parseFloat(getComputedStyle(brandLine, '::before').height);
-      // Undo the half-height overlap when measuring the original gap.
+      // Measure the base gap independently of the responsive overlap limit.
+      brandLine.style.removeProperty('--brand-line-rise');
       const lineOffset = parseFloat(getComputedStyle(section).paddingTop)
-        + parseFloat(getComputedStyle(brandLine).marginTop) + extension;
+        + parseFloat(getComputedStyle(brandLine).marginTop);
       const finaleBottom = height * .15 + 7 + finale.offsetHeight;
       const rise = Math.max(0, height - finaleBottom + lineOffset - 48);
       brandLine.style.setProperty('--brand-line-rise', `${rise}px`);
@@ -99,7 +100,7 @@
       figure.style.setProperty('--image-y', `${rect.y - exit}px`);
       figure.style.setProperty('--image-scale', rect.scale.toFixed(5));
       // Compensating the radius keeps thumbnails and full-size images equally rounded.
-      figure.style.setProperty('--image-radius', `${Math.min(160, 16 / Math.max(.01, rect.scale))}px`);
+      figure.style.setProperty('--image-radius', `${Math.min(geometry.radius * 10, geometry.radius / Math.max(.01, rect.scale))}px`);
       figure.style.setProperty('--image-visibility', rect.scale > .005 ? 'visible' : 'hidden');
     });
     scene.style.setProperty('--title-alpha', 1 - phase(p, .10, .205));
